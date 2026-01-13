@@ -1,0 +1,43 @@
+workflows:
+  ios-release:
+    name: iOS Release
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Codemagic
+    environment:
+      ios_signing:
+        provisioning_profiles:
+          - New provisioning profile Sound
+        certificates:
+          - New code signing certificate Sound
+      vars:
+        XCODE_PROJECT: "Sound Level Meter.xcodeproj"
+        XCODE_SCHEME: "Sound Level Meter"
+        APP_STORE_APP_ID: 6756615642
+      xcode: latest
+    scripts:
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
+      - name: Increment build number
+        script: |
+          agvtool new-version -all 3
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME" \
+            --archive-flags="-destination 'generic/platform=iOS'"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false
+        beta_groups:
+          - Internal Testers
+

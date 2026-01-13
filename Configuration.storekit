@@ -1,0 +1,98 @@
+{
+  "identifier" : "87654321",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "29.99",
+      "familyShareable" : false,
+      "internalID" : "6670897920",
+      "localizations" : [
+        {
+          "description" : "Unlock all professional features with a one-time purchase. Extended graphs, frequency weighting, calibration, alerts, CSV export, and no ads.",
+          "displayName" : "Pro Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.soundmeter.pro.lifetime",
+      "referenceName" : "Pro Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6670897920",
+    "_developerTeamID" : "YOUR_TEAM_ID",
+    "_lastSynchronizedDate" : 755308800.0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21512746",
+      "localizations" : [
+
+      ],
+      "name" : "Pro Subscription",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6670897922",
+          "introductoryOffer" : {
+            "internalID" : "6670897923",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Try free for 3 days, then get full year of Pro features.",
+              "displayName" : "Pro Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.soundmeter.pro.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro Annual",
+          "subscriptionGroupID" : "21512746",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6670897924",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Get full access to all Pro features with weekly subscription. Cancel anytime.",
+              "displayName" : "Pro Weekly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.soundmeter.pro.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Pro Weekly",
+          "subscriptionGroupID" : "21512746",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

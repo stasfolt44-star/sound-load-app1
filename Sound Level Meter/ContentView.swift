@@ -2,23 +2,36 @@
 //  ContentView.swift
 //  Sound Level Meter
 //
-//  Created by Sergey on 09.12.2025.
-//
 
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var settingsManager: SettingsManager
+    @EnvironmentObject var storeManager: StoreManager
+    @State private var showOnboarding = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        MainView()
+            .environmentObject(settingsManager)
+            .environmentObject(storeManager)
+            .fullScreenCover(isPresented: $showOnboarding) {
+                OnboardingView(isPresented: $showOnboarding)
+                    .environmentObject(settingsManager)
+            }
+            .onAppear {
+                checkOnboarding()
+            }
+    }
+
+    private func checkOnboarding() {
+        if !settingsManager.hasCompletedOnboarding {
+            showOnboarding = true
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(StoreManager.shared)
+        .environmentObject(SettingsManager.shared)
 }
