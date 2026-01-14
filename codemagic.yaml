@@ -22,7 +22,7 @@ workflows:
           xcode-project use-profiles
       - name: Increment build number
         script: |
-          agvtool new-version -all 3
+          agvtool new-version -all 4
       - name: Build IPA
         script: |
           xcode-project build-ipa \
