@@ -7,10 +7,8 @@ workflows:
       app_store_connect: Codemagic
     environment:
       ios_signing:
-        provisioning_profiles:
-          - New provisioning profile Sound
-        certificates:
-          - New code signing certificate Sound
+        distribution_type: app_store
+        bundle_identifier: com.soundlevel.soundlevelmeter.Sound-Level-Meter
       vars:
         XCODE_PROJECT: "Sound Level Meter.xcodeproj"
         XCODE_SCHEME: "Sound Level Meter"
