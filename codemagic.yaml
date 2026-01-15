@@ -8,7 +8,7 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.soundlevel.soundlevelmeter.Sound-Level-Meter
+        bundle_identifier: com.soundmeter.app
       vars:
         XCODE_PROJECT: "Sound Level Meter.xcodeproj"
         XCODE_SCHEME: "Sound Level Meter"
